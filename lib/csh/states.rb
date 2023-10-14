@@ -5,7 +5,7 @@ module CSH
     def translate(text)
       if text
         decipher_text = Translate.decipher(text)
-        puts decipher_text
+        puts decipher_text.gsub(/\\n/, "\n")
       end
     end
   end
