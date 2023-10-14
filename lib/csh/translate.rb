@@ -28,7 +28,8 @@ module CSH
         m_result = m_result.gsub(/#{r_up}/, v.upcase)
       end
       la_mut_result = lambda do |k, v|
-        l_mut_result.call(k, v[0], "(^|\s)")
+        l_mut_result.call(k, " #{v[0]}", "(\s)")
+        l_mut_result.call(k, v[0], "(^)")
         l_mut_result.call(k, v[1])
       end
 
