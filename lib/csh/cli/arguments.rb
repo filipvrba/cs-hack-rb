@@ -3,6 +3,7 @@ module CSH
     module Arguments
       @options = {
         translate: nil,
+        clipboard: false,
       }
 
       OptionParser.parse do |parser|
@@ -24,6 +25,9 @@ module CSH
         parser.on('-t TEXT', '--translate TEXT',
                   'Translate encrypted text.') do |text|
           @options[:translate] = text
+        end
+        parser.on('-cb', '--clipboard', 'Copies the translated text to the clipboard.') do
+          @options[:clipboard] = true
         end
       end
 
