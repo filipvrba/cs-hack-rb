@@ -18,7 +18,7 @@ module CSH
           exit
         end
         parser.on( "-v", "--version", "Show version" ) do
-          puts "Version is #{CSH::VERSION}"
+          Core::Event.print('version', CSH::VERSION)
           exit
         end
         
